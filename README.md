@@ -1,37 +1,45 @@
-# Blackjack Game
+# BlackJack (Vanilla JS)
 
-A fully functional browser-based Blackjack game built with HTML, CSS, and JavaScript.
-
-![Blackjack Preview](table.png)
+A simple BlackJack game built with plain **HTML + CSS + JavaScript**.
 
 ## Features
 
-- Classic Blackjack gameplay
-- Random card generation (with Ace as 11 and face cards as 10)
-- Real-time score calculation
-- Win, lose, and Blackjack detection
-- Clean and responsive UI with a casino table background
-- Restart functionality to play again
+- **Start game**: deals two random cards.
+- **Draw new card**: keeps drawing while you’re still in the round.
+- **Restart**: resets the round state.
+- **Card rules (current implementation)**:
+  - Ace (A) = 11
+  - Face cards (J/Q/K) = 10
+  - Number cards (2–9) = their value
 
-## How to Play
+## How to run
 
-1. Click **START GAME** to deal two cards
-2. Click **NEW CARD** to draw additional cards (as long as you're under 21)
-3. Try to get as close to **21** as possible without going over
-4. Click **RESTART** to reset the game at any time
+### Option 1: Open the file directly
 
-## Technologies Used
+1. Open `index.html` in your browser (double click it).
 
-- **HTML5** - Structure
-- **CSS3** - Styling and layout
-- **JavaScript (Vanilla)** - Game logic and DOM manipulation
+### Option 2: Run a local server (recommended)
 
-## Live Demo
+This avoids some browser restrictions and matches how web apps are usually run locally.
 
-*(Add your deployed link here if you host it on GitHub Pages, Netlify, or Vercel)*
+- **VS Code / Cursor**: install the **Live Server** extension, then “Go Live” from `index.html`.
 
-## Setup
+Or with PowerShell (Python):
 
-1. Clone the repository:
-   ```bash
-   git clone <your-repo-link>
+```bash
+python -m http.server 5500
+```
+
+Then open `http://localhost:5500` in your browser.
+
+## Project structure
+
+- `index.html` — page layout and buttons
+- `index.css` — styling (uses `table.png` as the background)
+- `index.js` — game logic (random cards, score, win/lose rules)
+- `table.png` — table background image
+
+## Notes / limitations
+
+- This is a simplified BlackJack (no dealer AI, no suits, and Ace is always 11).
+- If you click **START GAME** multiple times without restarting, it will keep adding cards to the current round (because the current state isn’t cleared on start).
